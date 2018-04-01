@@ -1,19 +1,98 @@
-<div class="hello">
-    <h1>{{ msg }}</h1>
-    <h2>Essential Links</h2>
-    <ul>
-      <li><a href="https://vuejs.org" target="_blank">Core Docs</a></li>
-      <li><a href="https://forum.vuejs.org" target="_blank">Forum</a></li>
-      <li><a href="https://chat.vuejs.org" target="_blank">Community Chat</a></li>
-      <li><a href="https://twitter.com/vuejs" target="_blank">Twitter</a></li>
-      <br>
-      <li><a href="http://vuejs-templates.github.io/webpack/" target="_blank">Docs for This Template</a></li>
-    </ul>
-    <h2>Ecosystem</h2>
-    <ul>
-      <li><a href="http://router.vuejs.org/" target="_blank">vue-router</a></li>
-      <li><a href="http://vuex.vuejs.org/" target="_blank">vuex</a></li>
-      <li><a href="http://vue-loader.vuejs.org/" target="_blank">vue-loader</a></li>
-      <li><a href="https://github.com/vuejs/awesome-vue" target="_blank">awesome-vue</a></li>
-    </ul>
+<div class="container">
+  <div class="hello" id="up">
+    <div class="text">
+      Hello, I'm Matthieu Boxho.<br>
+      Glad you found me !
+    </div>
+    <div class="link">
+      <a href="#" v-on:click="startJourney" v-scroll-to="'#me'">Let's go on a journey!
+        <i class="fa fa-subway"></i>
+      </a>
+    </div>
+  </div>
+  <div class="presentation" id="me">
+    <div class="me">
+      <img src="../../assets/me.png">
+      <div class="description">
+        <p>Denique Antiochensis ordinis vertices sub uno elogio iussit occidi ideo efferatus, quod ei celebrari vilitatem intempestivam urgenti, cum inpenderet inopia, gravius rationabili responderunt; et perissent ad unum ni comes orientis tunc Honoratus fixa constantia restitisset.</p>
+        <p>Saraceni tamen nec amici nobis umquam nec hostes optandi, ultro citroque discursantes quicquid inveniri poterat momento temporis parvi vastabant milvorum rapacium similes, qui si praedam dispexerint celsius, volatu rapiunt celeri, aut nisi impetraverint, non inmorantur.</p>
+        <p>His cognitis Gallus ut serpens adpetitus telo vel saxo iamque spes extremas opperiens et succurrens saluti suae quavis ratione colligi omnes iussit armatos et cum starent attoniti, districta dentium acie stridens adeste inquit viri fortes mihi periclitanti vobiscum.</p>
+      </div>
+    </div>
+
+    <div class="skillsContainer">
+      <div class="skills">
+        <div class="skill">
+          <i class="fa fa-cab"></i>
+          <div class="skillName">Receptive</div>
+          <hr>
+          <div class="skillDescription">
+            Eodem tempore etiam Hymetii praeclarae indolis viri negotium est actitatum, cuius hunc novimus esse textum. cum Africam pro consule regeret Carthagi niensibus victus inopia iam lassatis,  integre sine ulla restituit mora.
+          </div>
+        </div>
+        <div class="skill">
+          <i class="fa fa-fighter-jet"></i>
+          <div class="skillName">Determined</div>
+          <hr>
+          <div class="skillDescription">
+            Eodem tempore etiam Hymetii praeclarae indolis viri negotium est actitatum, cuius hunc novimus esse textum. cum Africam pro consule regeret Carthagi niensibus victus inopia iam lassatis,  integre sine ulla restituit mora.
+          </div>
+        </div>
+        <div class="skill">
+          <i class="fa fa-rocket"></i>
+          <div class="skillName">Innovating</div>
+          <hr>
+          <div class="skillDescription">
+            Eodem tempore etiam Hymetii praeclarae indolis viri negotium est actitatum, cuius hunc novimus esse textum. cum Africam pro consule regeret Carthagi niensibus victus inopia iam lassatis,  integre sine ulla restituit mora.
+          </div>
+        </div>
+        <div class="skill">
+          <i class="fa fa-ship"></i>
+          <div class="skillName">Reliable</div>
+          <hr>
+          <div class="skillDescription">
+            Eodem tempore etiam Hymetii praeclarae indolis viri negotium est actitatum, cuius hunc novimus esse textum. cum Africam pro consule regeret Carthagi niensibus victus inopia iam lassatis,  integre sine ulla restituit mora.
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="stories" id="story">
+    <div class="metroLine">
+      <div class="stop" v-bind:class="{ selected: selectedStory === 1 }"></div>
+      <div class="line"></div>
+      <div class="stop" v-bind:class="{ selected: selectedStory === 2 }"></div>
+      <div class="line"></div>
+      <div class="stop" v-bind:class="{ selected: selectedStory === 3 }"></div>
+      <div class="line"></div>
+      <div class="stop" v-bind:class="{ selected: selectedStory === 4 }"></div>
+      <div class="line dotted"></div>
+    </div>
+    <div class="infos">
+      <div class="story">
+        <div class="progressBar" v-if="selectedStory === 1">
+          <div class="skill" v-bind:class="{ active: selectedAnimation === 1 }" >
+          </div>
+          <i v-if="selectedAnimation === 1" class="devicon-angularjs-plain"></i>
+        </div>
+        <transition enter-active-class="animated slideInLeft">
+            <div v-if="selectedStory === 1">TEST</div>
+        </transition>
+        <transition enter-active-class="animated slideInLeft">
+          <div v-if="selectedStory === 2">Cycle Préparatoire</div>
+        </transition>
+        <transition enter-active-class="animated slideInLeft">
+          <div v-if="selectedStory === 3">3ème année</div>
+        </transition>
+        <transition enter-active-class="animated slideInLeft">
+          <div v-if="selectedStory === 4">4ème année</div>
+        </transition>
+      </div>
+      <button v-on:click="next">Next Stop !</button>
+    </div>  
+    
+  </div>
+  <div class="contact">
+      <a href="#" v-scroll-to="'#up'">To the top</a>
+  </div>
 </div>

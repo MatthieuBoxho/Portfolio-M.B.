@@ -1,17 +1,198 @@
-h1, h2 {
-font-weight: normal;
+.container{
+    font-family: "Josefin", Helvetica, Arial, sans-serif;
 }
 
-ul {
-list-style-type: none;
-padding: 0;
+.hello{
+    height: 100vh;
+    width: 100%;
+    background-color: #002230;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    font-size: 3em;
+
+    .link{
+        margin-top: 20px;
+
+        a{
+            border: solid 4px #42b983;
+            padding: 10px;
+            font-size: 0.5em;
+            color: #42b983;
+            text-decoration:none;
+        }
+    }
 }
 
-li {
-display: inline-block;
-margin: 0 10px;
+.stories{
+    height: 100vh;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+
+    .metroLine{
+        height: 100%;
+        margin: 0 0 10vh 0; 
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+
+        width: 20%;
+        
+        .stop{
+            height: 5vh;
+            width: 5vh;
+            background-color: white;
+            border: solid 3px #3fa175;
+            border-radius: 50%;
+            margin-top: -10px;
+            z-index: 1;
+    
+            &:first-child{
+                margin-top: 0;
+            }
+
+            &.selected{
+                background-color:#3fa175;
+                border: solid 3px black;
+                transition: all 0.5s ease-in-out;
+            }
+        }
+    
+        .line{
+            height: 20vh;
+            width: 0px;
+            margin: 0 auto;
+            border-left: solid 3vh #42b983;
+            margin-top: -10px;
+            z-index: 0;
+
+            &.dotted{
+                height: 20vh;
+                border-left: dashed 2vh #42b983;
+                border-right: none;
+                border-top: none;
+                border-bottom: none;
+            }
+        }
+    }
+
+    .infos{
+        height: 100%;
+        width: 80%;
+        text-align: center;
+        color: white;
+        background-color: #3BA575;
+        
+        .story{
+            height: 50px;
+            width: 80%;
+            margin: 5vh auto 0 auto;
+            
+            .progressBar{
+                margin-bottom: 10px;
+                width:100%;
+                height: 50%;
+                display: flex;
+                flex-direction: row;
+                align-items: center;
+
+                i{
+                    font-size: 2em;
+                    margin-left: 10px;
+                }
+                
+                .skill{
+                    background-color: white;
+                    width: 0%;
+                    height: 100%;
+                    &.active{
+                        width: 90%;
+                        transition: width 1.5s ease-in-out;
+                    }
+                }
+
+            }
+        }
+    }
 }
 
-a {
-color: #42b983;
+.presentation{
+    height: 100vh;
+    .me{
+        height: 60%;
+        display: flex;
+        flex-direction: row;
+        align-content: center;
+        justify-content: flex-start;
+        color: #626262;
+        width: 100%;
+        
+        img {
+            margin: 5vh 0 0 10vh;
+            max-height: 30vh;
+            border-radius: 50%;
+        }
+
+        .description{
+            font-size: 1.2em;
+            text-align: center;
+            width: 50%;
+            margin: auto;
+        }
+    }
+    
+
+    .skillsContainer{
+        height: 40%;
+        //background-color: #35986E;
+        background-color: #002230;
+        .skills{
+            width: 80%;
+            display: flex;
+            flex-direction: row;
+            margin: 0 auto;
+            justify-content: space-around;
+            height: 100%;
+        
+            .skill{
+                height: 100%;
+                text-align: center;
+
+                i {
+                    font-size: 5em;
+                    background-color: #35986E;
+                    color: lightgrey;
+                    border-radius: 50%;
+                    margin-top: -6vh;
+                    padding: 10px;
+                }
+
+                .skillName{
+                    margin-top: 10px;
+                    font-size: 2em;
+                }
+
+                hr {
+                    width: 50%;
+                    height: 2px;
+                    background-color: #35986E;
+                    border-style: none;
+                }
+
+                .skillDescription{
+                    margin: 10px auto 0 auto;
+                    text-align: justify;
+                    width: 80%;
+                }
+            }
+        }
+    }
+}
+
+.contact{
+    height: 30vh;
+    background-color: #002230;
 }
